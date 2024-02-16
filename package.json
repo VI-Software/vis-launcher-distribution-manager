@@ -1,6 +1,6 @@
 {
   "name": "vis-launcher-distribution-manager",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": " Librería de desarrollo para VIS Launcher ",
   "main": "build/index.js",
   "types": "build/index.d.ts",
