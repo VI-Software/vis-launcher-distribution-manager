@@ -1,0 +1,77 @@
+/*
+    ____   ____.___    _________       _____  __                                 
+\   \ /   /|   |  /   _____/ _____/ ____\/  |___  _  _______ _______   ____  
+ \   Y   / |   |  \_____  \ /  _ \   __\\   __\ \/ \/ /\__  \\_  __ \_/ __ \ 
+  \     /  |   |  /        (  <_> )  |   |  |  \     /  / __ \|  | \/\  ___/ 
+   \___/   |___| /_______  /\____/|__|   |__|   \/\_/  (____  /__|    \___  >
+                         \/                                 \/            \/ 
+                         
+                         
+    Copyright 2024 (©) VI Software y contribuidores. Todos los derechos reservados.
+    
+    GitHub: https://github.com/VI-Software/vis-launcher-distribution-manager
+    Web: https://vis.galnod.com
+    Licencia del proyecto: https://github.com/VI-Software/vis-launcher-distribution-manager/blob/main/LICENSE
+
+*/
+import { Artifact } from './artifact'
+import { Required } from './required'
+import { Type } from './type'
+
+export interface Module {
+
+    /**
+     * The ID of the module. All modules that are not of type File MUST use a maven identifier.
+     *  Version information and other metadata is pulled from the identifier. Modules which are
+     * stored maven style use the identifier to resolve the destination path. If the extension
+     * is not provided, it defaults to jar.
+     *
+     * Template
+     *
+     * my.group:arifact:version@extension
+     *
+     * my/group/artifact/version/artifact-version.extension
+     *
+     * If the module's artifact does not declare the path property, its path will be resolved from the ID.
+     */
+    id: string
+
+    /**
+     * The name of the module. Used on the UI.
+     */
+    name: string
+
+    /**
+     * The type of the module.
+     */
+    type: Type
+
+    /**
+     * Whether or not this module should be included on the classpath.
+     * Only applicable to modules of type Library.
+     * 
+     * Defaults to true when not present.
+     * 
+     * @since 1.1.0
+     */
+    classpath?: boolean
+
+    /**
+     * Defines whether or not the module is required. If omitted, then the module will be required.
+     */
+    required?: Required
+
+    /**
+     * The download artifact for the module.
+     */
+    artifact: Artifact
+
+    /**
+     * An array of sub modules declared by this module. Typically, files which require other files
+     * are declared as submodules. A quick example would be a mod, and the configuration file for
+     * that mod. Submodules can also declare submodules of their own. The file is parsed recursively,
+     * so there is no limit.
+     */
+    subModules?: Module[]
+
+}

@@ -1,0 +1,35 @@
+{
+  "name": "vis-launcher-distribution-manager",
+  "version": "1.3.2",
+  "description": " Librería de desarrollo para VIS Launcher ",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "clean": "rimraf build",
+    "tsc": "tsc",
+    "build": "npm run clean && npm run tsc",
+    "lint": "eslint . --ext .js,.ts",
+    "bl": "npm run build && npm link",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VI-Software/vis-launcher-distribution-manager.git"
+  },
+  "author": "VI Software",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VI-Software/vis-launcher-distribution-manager/issues"
+  },
+  "homepage": "https://github.com/VI-Software/vis-launcher-distribution-manager#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.55.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.2"
+  },
+  "files": [
+    "build"
+  ]
+}
