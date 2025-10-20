@@ -6,14 +6,15 @@
    \___/   |___| /_______  /\____/|__|   |__|   \/\_/  (____  /__|    \___  >
                          \/                                 \/            \/ 
                          
-                         
-    Copyright 2024 (©) VI Software y contribuidores. Todos los derechos reservados.
-    
-    GitHub: https://github.com/VI-Software/vis-launcher-distribution-manager
-    Web: https://vis.galnod.com
-    Licencia del proyecto: https://github.com/VI-Software/vis-launcher-distribution-manager/blob/main/LICENSE
+    © 2025 VI Software. All rights reserved.
 
+    License: LGPL-3.0-only
+    https://www.gnu.org/licenses/lgpl-3.0.en.html
+
+    GitHub: https://github.com/VI-Software
+    Website: https://visoftware.dev
 */
+
 export interface Artifact {
 
     /**
