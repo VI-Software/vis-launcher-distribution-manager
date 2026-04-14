@@ -26,7 +26,9 @@ export enum Type {
     FabricMod = 'FabricMod',
     LiteMod = 'LiteMod',
     File = 'File',
-    VersionManifest = 'VersionManifest'
+    VersionManifest = 'VersionManifest',
+    NeoForge = 'NeoForge',
+    NeoForgeMod = 'NeoForgeMod'
 
 }
 
@@ -76,6 +78,14 @@ export const TypeMetadata: {[property: string]: TypeMetadata} = {
     },
     File: {
         id: Type.File
+    },
+    NeoForge: {
+        id: Type.NeoForge,
+        defaultExtension: 'jar'
+    },
+    NeoForgeMod: {
+        id: Type.NeoForgeMod,
+        defaultExtension: 'jar'
     },
     VersionManifest: {
         id: Type.VersionManifest,
